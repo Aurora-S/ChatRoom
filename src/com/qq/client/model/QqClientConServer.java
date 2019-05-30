@@ -3,11 +3,13 @@ package com.qq.client.model;
 //import com.qq.client.common.*;
 import com.qq.client.tools.ClientConServerThread;
 import com.qq.client.tools.ManageClientConServerThread;
-import com.qq.common.*;
+import com.qq.common.Message;
+import com.qq.common.User;
 
-import java.util.*;
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 
 /**
@@ -25,6 +27,9 @@ public class QqClientConServer {
         boolean b=false;
         try {
             System.out.println("kk");
+            //socket函数就是去连接某个服务器端，127。0。0。1表示服务器的ip，9999是端口
+            //这句话运行之后，回去127这个ip地址看是否有个9999端口监听，如果被监听则这个socket
+            //和服务器的socket就达成一个通道
             s=new Socket("127.0.0.1",9999);
             ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
             oos.writeObject(o);//发出去，之后那边会返回结果，发信息要验证是否合法

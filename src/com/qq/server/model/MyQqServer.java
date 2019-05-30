@@ -8,7 +8,7 @@
 package com.qq.server.model;
 import com.qq.common.*;
 
-import java.net.*;
+import java.net.*;//网络开发要引的包
 import java.io.*;
 
 public class MyQqServer {
@@ -17,12 +17,13 @@ public class MyQqServer {
     public MyQqServer(){
 
         try{
-
+            //让服务器处于监听状态，调它的一个函数叫serversocket
             //在9999监听
             System.out.println("我是服务器，在9999监听");
             ServerSocket ss=new ServerSocket(9999);
             //阻塞，等待连接
             while(true) {
+                //等待某个客户端来连接，该函数会返回一个socket连接，在等待的时候不执行下面的语句
                 Socket s = ss.accept();
 
                 //接受客户端发来的信息
