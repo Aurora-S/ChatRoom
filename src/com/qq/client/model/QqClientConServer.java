@@ -26,7 +26,7 @@ public class QqClientConServer {
 
         boolean b=false;
         try {
-            System.out.println("kk");
+            //System.out.println("kk");
             //socket函数就是去连接某个服务器端，127。0。0。1表示服务器的ip，9999是端口
             //这句话运行之后，回去127这个ip地址看是否有个9999端口监听，如果被监听则这个socket
             //和服务器的socket就达成一个通道
