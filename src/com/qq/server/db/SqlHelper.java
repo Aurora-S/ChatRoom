@@ -17,8 +17,11 @@ public class SqlHelper {
     Connection ct=null;
     String driverName="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/proD";
+    //?serverTimezone=GMT%2B8&useSSL=false
     String user="root";
     String passwd="mysql@1999";
+
+
     //构造函数，初始化ct
     public SqlHelper()
     {

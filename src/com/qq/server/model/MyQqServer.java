@@ -6,10 +6,14 @@
  * 作者姓名           修改时间           版本号              描述
  */
 package com.qq.server.model;
-import com.qq.common.*;
+import com.qq.client.model.QqClientUser;
+import com.qq.common.Message;
+import com.qq.common.User;
 
-import java.net.*;//网络开发要引的包
-import java.io.*;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 public class MyQqServer {
 
@@ -33,7 +37,9 @@ public class MyQqServer {
                 Message m=new Message();
                 ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 
+                QqClientUser qqClientUser=new QqClientUser();
                 if (u.getPasswd().equals("123456")) {
+               // if (qqClientUser.checkUser(u)) {
                     //返回一个成功登录的信息包
                     m.setMesType("1");
                     oos.writeObject(m);

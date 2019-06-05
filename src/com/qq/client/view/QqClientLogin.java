@@ -131,11 +131,12 @@ public class QqClientLogin extends JFrame implements ActionListener{
         if(arg0.getSource()==jp1_jb2) {
             this.dispose();
         }
-        if(arg0.getSource()==jp1_jb1){
+        else if(arg0.getSource()==jp1_jb1){
             QqClientUser qqClientUser=new QqClientUser();
             User u=new User();
             u.setUserId(jp2_jtf.getText().trim());
             u.setPasswd(new String(jp2_jpf.getPassword()));//注意，密码与账号操作不同
+
 
             UserModel um=new UserModel();
             String res=um.checkUser(jp2_jtf.getText().trim(),new String(jp2_jpf.getPassword()));
@@ -144,6 +145,28 @@ public class QqClientLogin extends JFrame implements ActionListener{
            // if(res.equals("admin")){
 
             //}else
+
+
+            /*try{
+
+                //组织sql语句和参数列表
+                String sql="select zhiwei.zhiwei from login,zhiwei where login.id=zhiwei.id and login.id=? and login.id=?";
+                String paras[]={uid,p};
+                sp=new SqlHelper();
+                ResultSet rs=sp.query(sql,paras);
+                if(rs.next())
+                {
+                    //则取出职位
+                    zhiwei=rs.getString(1);//1:select zhiwei.zhiwei from...
+                }
+            }catch(Exception e){
+
+            }finally{
+                sp.close();
+                //关于上面的rs是否关闭：java是引用传递，把sp关闭了就相当于也关了rs
+            }
+            */
+
 
 
             if(qqClientUser.checkUser(u)){
