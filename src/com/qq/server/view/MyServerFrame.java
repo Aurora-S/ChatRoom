@@ -12,8 +12,8 @@ package com.qq.server.view;
 import com.qq.server.model.MyQqServer;
 
 import javax.swing.*;
-import  java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -22,7 +22,7 @@ import java.awt.event.*;
 public class MyServerFrame extends JFrame implements ActionListener{
 
     JPanel jp1;
-    JButton jb1,jb2;
+    JButton jb1,jb2,jb3;
 
     public static void  main(String[] args){
 
@@ -32,12 +32,19 @@ public class MyServerFrame extends JFrame implements ActionListener{
     public MyServerFrame(){
 
         jp1=new JPanel();
+
         jb1=new JButton("启动服务器");
         jb1.addActionListener(this);
 
         jb2=new JButton("关闭服务器");
+        jb2.addActionListener(this);
+
+        jb3=new JButton("当前在线人数");
+        jb3.addActionListener(this);
+
         jp1.add(jb1);
         jp1.add(jb2);
+        jp1.add(jb3);
 
         this.add(jp1);
         this.setSize(500,400);
@@ -47,9 +54,20 @@ public class MyServerFrame extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==jb1){
+        if(e.getSource()==jb1) {
+            JOptionPane.showMessageDialog(this, "服务器开启成功");
             //实现启动，new一个即可
             new MyQqServer();
+            }
+        if(e.getSource()==jb3) {
+            JOptionPane.showMessageDialog(this, "3");
+            }
+        if(e.getSource()==jb2) {
+                     JOptionPane.showMessageDialog(this, "服务器已关闭");
+                      this.dispose();
+            }
+
         }
-    }
+
+
 }
