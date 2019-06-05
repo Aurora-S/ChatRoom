@@ -10,15 +10,19 @@
  */
 package com.qq.client.view;
 
-import com.qq.client.model.QqClientConServer;
 import com.qq.client.model.QqClientUser;
-import com.qq.common.*;
+import com.qq.client.tools.ManageClientConServerThread;
+import com.qq.client.tools.ManageQqFriendList;
+import com.qq.common.Message;
+import com.qq.common.MessageType;
+import com.qq.common.User;
+import com.qq.server.model.UserModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.ObjectOutputStream;
-import com.qq.client.tools.*;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -96,7 +100,11 @@ public class QqClientLogin extends JFrame implements ActionListener{
         jp1_jb1=new JButton(new ImageIcon("image/denglu.gif"));//登陆图片，按钮为图
         ////响应用户点击登录
         jp1_jb1.addActionListener(this);
+
         jp1_jb2=new JButton(new ImageIcon("image/quxiao.gif"));
+        ////
+        jp1_jb2.addActionListener(this);
+
         jp1_jb3=new JButton(new ImageIcon("image/xiangdao.gif"));
 
         //把三个按钮放入到jp1
@@ -117,13 +125,26 @@ public class QqClientLogin extends JFrame implements ActionListener{
     }
 
     ////
+    //响应用户登录的请求
     public void actionPerformed(ActionEvent arg0) {
         //如果用户点击登录
+        if(arg0.getSource()==jp1_jb2) {
+            this.dispose();
+        }
         if(arg0.getSource()==jp1_jb1){
             QqClientUser qqClientUser=new QqClientUser();
             User u=new User();
             u.setUserId(jp2_jtf.getText().trim());
             u.setPasswd(new String(jp2_jpf.getPassword()));//注意，密码与账号操作不同
+
+            UserModel um=new UserModel();
+            String res=um.checkUser(jp2_jtf.getText().trim(),new String(jp2_jpf.getPassword()));
+            //System.out.println(jp2_jtf.getText().trim()+" 职位是 "+res);
+
+           // if(res.equals("admin")){
+
+            //}else
+
 
             if(qqClientUser.checkUser(u)){
                 try{
