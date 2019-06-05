@@ -16,7 +16,7 @@ public class SqlHelper {
     ResultSet rs=null;
     Connection ct=null;
     String driverName="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/proD";
+    String url="jdbc:mysql://localhost:3306/proD?useUnicode=true&characterEncoding=UTF-8";
     //?serverTimezone=GMT%2B8&useSSL=false
     String user="root";
     String passwd="mysql@1999";

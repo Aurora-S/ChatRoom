@@ -8,12 +8,14 @@
 package com.qq.client.view;
 
 import com.qq.client.tools.ManageQqChat;
-import com.qq.client.view.*;
 import com.qq.common.Message;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 public class QqFriendList extends JFrame implements ActionListener,MouseListener{
@@ -29,6 +31,12 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
     JButton jpmsr_jb1,jpmsr_jb2,jpmsr_jb3;
     JScrollPane jsp2;
     JLabel []jbls;
+
+    //处理第三张卡片（黑名单
+    JPanel jphmd1,jphmd2,jphmd3;//jphy即jp好友
+    JButton jphmd_jb1,jphmd_jb2,jphmd_jb3;
+    JScrollPane jsp3;
+    JLabel []jbls2;
 
     //把整个JFrame设置成cardlayout布局
     CardLayout cl;
@@ -51,21 +59,22 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
     public QqFriendList(String ownerId){
         this.owner=ownerId;
         //处理第一张卡片（显示好友列表），最大的那个
-        jphy_jb1=new JButton("我的好友");
-        jphy_jb2=new JButton("陌生人");
+        jphy_jb1=new JButton("ChatBot");
+        jphy_jb2=new JButton("VirtualIdol");
         //对陌生人按钮监听
         jphy_jb2.addActionListener(this);
-        jphy_jb3=new JButton("黑名单");
+        jphy_jb3=new JButton("SpringMVC");
+        jphy_jb3.addActionListener(this);
 
         jphy1=new JPanel(new BorderLayout());
         //假定有50好友（中间那个
-        jphy2=new JPanel(new GridLayout(50,1,4,4));//44代表上下行间隔
+        jphy2=new JPanel(new GridLayout(10,1,4,4));//44代表上下行间隔
 
         //给jphy2初始化50个好友
-        jbls=new JLabel[50];
+        jbls=new JLabel[8];
 
         for(int i=0;i<jbls.length;i++){
-            jbls[i]=new JLabel(i+1+"",new ImageIcon("image/mm.jpg"),JLabel.LEFT);
+            jbls[i]=new JLabel(i+2017001+"",new ImageIcon("image/umm.jpg"),JLabel.LEFT);
             //默认除了自己都不在线
             jbls[i].setEnabled(false);
             if(jbls[i].getText().equals(ownerId)){
@@ -94,21 +103,33 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
 
         //处理第二张卡片，，，，复制粘贴上面一大堆。。。
-        jpmsr_jb1=new JButton("我的好友");
+        jpmsr_jb1=new JButton("ChatBot");
         jpmsr_jb1.addActionListener(this);
 
-        jpmsr_jb2=new JButton("陌生人");
-        jpmsr_jb3=new JButton("黑名单");
+        jpmsr_jb2=new JButton("VirtualIdol");
+        jpmsr_jb3=new JButton("SpringMVC");
+        jpmsr_jb3.addActionListener(this);
 
         jpmsr1=new JPanel(new BorderLayout());
         //假定有20陌生人
-        jpmsr2=new JPanel(new GridLayout(20,1,4,4));//44代表上下行间隔
+        jpmsr2=new JPanel(new GridLayout(8,1,4,4));//44代表上下行间隔
 
         //给jpmsr2初始化50个好友
-        JLabel []jbls2=new JLabel[20];
+        JLabel []jbls2=new JLabel[6];
 
         for(int i=0;i<jbls2.length;i++){
-            jbls2[i]=new JLabel(i+1+"",new ImageIcon("image/mm.jpg"),JLabel.LEFT);
+            jbls2[i]=new JLabel(i+2017009+"",new ImageIcon("image/umm.jpg"),JLabel.LEFT);
+
+
+
+            jbls2[i].setEnabled(false);
+            if(jbls2[i].getText().equals(ownerId)){
+                jbls2[i].setEnabled(true);
+            }
+            jbls2[i].addMouseListener(this);
+
+
+
             //每创建一个jlable，就是一个好友，它有图片
             jpmsr2.add(jbls2[i]);
 
@@ -127,10 +148,76 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jpmsr1.add(jsp2,"Center");
         jpmsr1.add(jpmsr_jb3,"South");
 
+
+
+
+
+//处理第san张卡片，，，，复制粘贴上面一大堆。。。
+        jphmd_jb1=new JButton("ChatBot");
+        jphmd_jb1.addActionListener(this);
+
+        jphmd_jb2=new JButton("VirtualIdol");
+        jphmd_jb2.addActionListener(this);
+        jphmd_jb3=new JButton("SpringMVC");
+
+
+        jphmd1=new JPanel(new BorderLayout());
+        //假定有20陌生人
+        jphmd2=new JPanel(new GridLayout(5,1,4,4));//44代表上下行间隔
+
+        //给jpmsr2初始化50个好友
+        JLabel []jbls3=new JLabel[4];
+
+        for(int i=0;i<jbls3.length;i++){
+            jbls3[i]=new JLabel(i+2017015+"",new ImageIcon("image/umm.jpg"),JLabel.LEFT);
+
+
+
+            jbls3[i].setEnabled(false);
+            if(jbls3[i].getText().equals(ownerId)){
+                jbls3[i].setEnabled(true);
+            }
+            jbls3[i].addMouseListener(this);
+
+
+
+            //每创建一个jlable，就是一个好友，它有图片
+            jphmd2.add(jbls3[i]);
+
+        }
+
+        //存放陌生人黑名单，2行一列
+        jphmd3=new JPanel(new GridLayout(3,1));
+        //把两个按钮加入到jphy3
+        jphmd3.add(jphmd_jb1);
+        jphmd3.add(jphmd_jb2);
+
+
+        jphmd3.add(jphmd_jb3);
+
+
+
+        jsp3=new JScrollPane(jphmd2);
+
+        //对jphy1初始化，jphy1是整个一大块，要放在jfream才能实现
+        jphmd1.add(jphmd3,"North");
+        jphmd1.add(jsp3,"Center");
+        //jphmd1.add(jphmd_jb3,"South");
+
+
+
+
+
+
         cl=new CardLayout();
         this.setLayout(cl);
         this.add(jphy1,"1");
         this.add(jpmsr1,"2");
+
+
+        this.add(jphmd1,"3");
+
+
         //在窗口显示自己的编号
         this.setTitle(ownerId);
 
@@ -146,8 +233,20 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         if(arg0.getSource()==jphy_jb2){
             //cl.show(this,"2");会报错
             cl.show(this.getContentPane(),"2");
-        }else if(arg0.getSource()==jpmsr_jb1)
-            cl.show(this.getContentPane(),"1");
+        }else if(arg0.getSource()==jpmsr_jb1) {
+            cl.show(this.getContentPane(), "1");
+        }else if(arg0.getSource()==jpmsr_jb3) {
+            cl.show(this.getContentPane(), "3");
+        }
+
+
+        else if(arg0.getSource()==jphy_jb3) {
+                cl.show(this.getContentPane(), "3");
+        }else if(arg0.getSource()==jphmd_jb1) {
+            cl.show(this.getContentPane(), "1");
+        }else if(arg0.getSource()==jphmd_jb2) {
+            cl.show(this.getContentPane(), "2");
+        }
     }
 
 
