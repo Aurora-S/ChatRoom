@@ -65,8 +65,11 @@ public class QqClientLogin extends JFrame implements ActionListener{
         jp2_jbl1 = new JLabel("用户ID",JLabel.CENTER);
         jp2_jbl2 = new JLabel("用户密码",JLabel.CENTER);
         jp2_jb9= new JButton("修改密码");
+        jp2_jb9.addActionListener(this);
         jp2_jb9.setForeground(Color.blue);//前景色变蓝色，即字体颜色
+
         jp2_jb10 = new JButton("忘记密码");
+
 
         jp2_jb1=new JButton("绑定手机");
 
@@ -130,6 +133,8 @@ public class QqClientLogin extends JFrame implements ActionListener{
         //如果用户点击登录
         if(arg0.getSource()==jp1_jb2) {
             this.dispose();
+        } else if(arg0.getSource()==jp2_jb9){
+            new NewPw();
         }
         else if(arg0.getSource()==jp1_jb1){
             QqClientUser qqClientUser=new QqClientUser();
