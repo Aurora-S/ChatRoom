@@ -72,7 +72,8 @@ public class QqSearchRes extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==jb1){
-            //new QqSearchRes();
+            JOptionPane.showMessageDialog(this, "Application approved");
+            new NewList();
         }
     }
 
