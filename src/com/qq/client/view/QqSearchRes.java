@@ -66,13 +66,14 @@ public class QqSearchRes extends JFrame implements ActionListener{
         this.setTitle("Result");
         this.setSize(300,490);
         this.setVisible(true);
+        this.setLocation(300,250);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==jb1){
-            JOptionPane.showMessageDialog(this, "Application approved");
+            JOptionPane.showMessageDialog(null, "Application approved");
             new NewList("2017001");
             this.dispose();
         }

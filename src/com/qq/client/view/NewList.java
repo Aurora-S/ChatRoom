@@ -296,7 +296,7 @@ public class NewList extends JFrame implements ActionListener, MouseListener {
         //this.add(jphy1,"Center");
         this.setSize(240,400);
         this.setVisible(true);
-        this.setLocation(450,250);
+        this.setLocation(470,250);
     }
 
 
@@ -322,6 +322,14 @@ public class NewList extends JFrame implements ActionListener, MouseListener {
             new QqSearch();
         }else if(arg0.getSource()==jphy_jb5){
             new QqManage();
+
+
+
+            this.dispose();
+
+
+
+
         }
     }
 

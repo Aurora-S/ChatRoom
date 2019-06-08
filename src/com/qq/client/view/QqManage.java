@@ -65,6 +65,10 @@ public class QqManage extends JFrame implements ActionListener {
         this.add(jp1,"South");
         this.setTitle("Manage");
         this.setSize(300,470);
+
+        this.setLocation(470,250);
+
+
         this.setVisible(true);
     }
 
@@ -72,9 +76,8 @@ public class QqManage extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==jb1){
 
-            JOptionPane.showMessageDialog(this, "Confirm your exit?\r\nThis will defriend you from the team members!");
-
-            new QqDelEnd();
+            JOptionPane.showMessageDialog(null, "Confirm your exit?\r\nThis will defriend you from the team members!");
+            //new QqDelEnd("2017001");
             this.dispose();
         }
     }

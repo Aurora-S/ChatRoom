@@ -121,7 +121,7 @@ public class QqClientLogin extends JFrame implements ActionListener{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
-        this.setLocation(450,250);
+        this.setLocation(500,250);
     }
 
     ////

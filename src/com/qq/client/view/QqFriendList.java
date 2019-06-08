@@ -293,7 +293,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         //this.add(jphy1,"Center");
         this.setSize(240,400);
         this.setVisible(true);
-        this.setLocation(450,250);
+        this.setLocation(470,250);
     }
 
 
