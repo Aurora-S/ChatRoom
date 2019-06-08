@@ -61,6 +61,7 @@ public class QqSearch extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==jb1){
             new QqSearchRes();
+            this.dispose();
         }
     }
 }

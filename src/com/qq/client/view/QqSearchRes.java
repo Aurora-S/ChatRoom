@@ -74,6 +74,7 @@ public class QqSearchRes extends JFrame implements ActionListener{
         if(e.getSource()==jb1){
             JOptionPane.showMessageDialog(this, "Application approved");
             new NewList("2017001");
+            this.dispose();
         }
     }
 

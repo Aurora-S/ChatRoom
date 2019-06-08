@@ -32,11 +32,12 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
     JScrollPane jsp2;
     JLabel []jbls;
 
-    //处理第三张卡片（黑名单
+    /*//处理第三张卡片（黑名单
     JPanel jphmd1,jphmd2,jphmd3;//jphy即jp好友
     JButton jphmd_jb1,jphmd_jb2,jphmd_jb3,jphmd_jb4,jphmd_jb5;
     JScrollPane jsp3;
     JLabel []jbls2;
+    */
 
     //把整个JFrame设置成cardlayout布局
     CardLayout cl;
@@ -63,8 +64,11 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jphy_jb2=new JButton("VirtualIdol");
         //对陌生人按钮监听
         jphy_jb2.addActionListener(this);
+
+        /*
         jphy_jb3=new JButton("SpringMVC");
         jphy_jb3.addActionListener(this);
+        */
 
 
 
@@ -104,7 +108,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jphy3=new JPanel(new GridLayout(4,1));
         //把两个按钮加入到jphy3
         jphy3.add(jphy_jb2);
-        jphy3.add(jphy_jb3);
+        //jphy3.add(jphy_jb3);
 
 
 
@@ -128,8 +132,12 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jpmsr_jb1.addActionListener(this);
 
         jpmsr_jb2=new JButton("VirtualIdol");
+
+
+        /*
         jpmsr_jb3=new JButton("SpringMVC");
         jpmsr_jb3.addActionListener(this);
+        */
 
 
 
@@ -182,7 +190,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jpmsr4=new JPanel(new GridLayout(3,1));
         //把两个按钮加入到jphy3
        // jpmsr3.add(jpmsr_jb2);
-        jpmsr4.add(jpmsr_jb3);
+        //jpmsr4.add(jpmsr_jb3);
 
 
 
@@ -202,7 +210,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
 
 
-
+/*
 //处理第san张卡片，，，，复制粘贴上面一大堆。。。
         jphmd_jb1=new JButton("ChatBot");
         jphmd_jb1.addActionListener(this);
@@ -263,6 +271,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jphmd1.add(jphmd3,"North");
         jphmd1.add(jsp3,"Center");
         //jphmd1.add(jphmd_jb3,"South");
+        */
 
 
 
@@ -275,7 +284,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         this.add(jpmsr1,"2");
 
 
-        this.add(jphmd1,"3");
+        //this.add(jphmd1,"3");
 
 
         //在窗口显示自己的编号
@@ -302,11 +311,13 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
         else if(arg0.getSource()==jphy_jb3) {
                 cl.show(this.getContentPane(), "3");
-        }else if(arg0.getSource()==jphmd_jb1) {
+        }
+        /*else if(arg0.getSource()==jphmd_jb1) {
             cl.show(this.getContentPane(), "1");
         }else if(arg0.getSource()==jphmd_jb2) {
             cl.show(this.getContentPane(), "2");
-        }else if(arg0.getSource()==jphy_jb4){
+        }
+        */else if(arg0.getSource()==jphy_jb4){
             new QqSearch();
         }else if(arg0.getSource()==jphy_jb5){
 
