@@ -62,8 +62,8 @@ public class QqClientLogin extends JFrame implements ActionListener{
         //处理中部
         jp2=new JPanel(new GridLayout(3,3));//三行三列
         //先处理lable
-        jp2_jbl1 = new JLabel("QQ号码",JLabel.CENTER);
-        jp2_jbl2 = new JLabel("QQ密码",JLabel.CENTER);
+        jp2_jbl1 = new JLabel("用户ID",JLabel.CENTER);
+        jp2_jbl2 = new JLabel("用户密码",JLabel.CENTER);
         jp2_jbl3= new JLabel("忘记密码",JLabel.CENTER);
         jp2_jbl3.setForeground(Color.blue);//前景色变蓝色，即字体颜色
         jp2_jbl4 = new JLabel("申请密码保护",JLabel.CENTER);
@@ -87,7 +87,7 @@ public class QqClientLogin extends JFrame implements ActionListener{
         jp2.add(jp2_jbl4);
         //创建选项卡窗口
         jtp=new JTabbedPane();//务必记得创建！要不就是空指针了
-        jtp.add("QQ号码",jp2);
+        jtp.add("用户ID",jp2);
         jp3=new JPanel();
         jtp.add("手机号码",jp3);
         jp4=new JPanel();
