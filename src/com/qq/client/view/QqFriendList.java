@@ -307,7 +307,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         }else if(arg0.getSource()==jphmd_jb2) {
             cl.show(this.getContentPane(), "2");
         }else if(arg0.getSource()==jphy_jb4){
-
+            new QqSearch();
         }else if(arg0.getSource()==jphy_jb5){
 
         }
