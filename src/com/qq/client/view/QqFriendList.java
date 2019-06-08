@@ -73,7 +73,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
         jphy_jb4=new JButton("Search");
         jphy_jb4.addActionListener(this);
-        jphy_jb5=new JButton("Manage");
+        jphy_jb5=new JButton("Delete");
         jphy_jb5.addActionListener(this);
 
 
@@ -136,7 +136,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
         jpmsr_jb4=new JButton("Search");
 
-        jpmsr_jb5=new JButton("Manage");
+        jpmsr_jb5=new JButton("Delete");
 
 
 
@@ -215,7 +215,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
 
         jphmd_jb4=new JButton("Search");
-        jphmd_jb5=new JButton("Manage");
+        jphmd_jb5=new JButton("Delete");
 
 
 
@@ -307,7 +307,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         }else if(arg0.getSource()==jphmd_jb2) {
             cl.show(this.getContentPane(), "2");
         }else if(arg0.getSource()==jphy_jb4){
-            new QqSearch();
+            new QqDelete();
         }else if(arg0.getSource()==jphy_jb5){
 
         }

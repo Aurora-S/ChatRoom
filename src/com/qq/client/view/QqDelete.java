@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2015-2019, XXX有限公司
- * FileName: QqSearch
+ * FileName: QqDelete
  * Author:   trhjyhf
  * Date:     2019/6/8 12:47
  * Description:
@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
  * @create 2019/6/8
  * @since 1.0.0
  */
-public class QqSearch extends JFrame implements ActionListener {
+public class QqDelete extends JFrame implements ActionListener {
 
 
         JTextField jtf;
@@ -35,7 +35,7 @@ public class QqSearch extends JFrame implements ActionListener {
             //QqChat qqChat=new QqChat("1");
         }
 
-        public QqSearch(){
+        public QqDelete(){
             this.setResizable(false);
             //this.setVisible(true);
 
