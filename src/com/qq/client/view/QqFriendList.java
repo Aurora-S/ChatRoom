@@ -51,7 +51,7 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         String onLineFriend[]=m.getCon().split(" ");
 
         for(int i=0;i<onLineFriend.length;i++){
-            jbls[Integer.parseInt(onLineFriend[i])-1].setEnabled(true);
+            jbls[Integer.parseInt(onLineFriend[i])-2017001].setEnabled(true);
         }
 
     }
@@ -265,6 +265,14 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
             ManageQqChat.addQqChat(this.owner+" "+friendNo,qqChat);
 
         }
+
+
+        //if(arg0.getClickCount()==2){//2指双击
+
+
+
+
+
     }
     public void mouseEntered(MouseEvent arg0){
         JLabel j1=(JLabel)arg0.getSource();
