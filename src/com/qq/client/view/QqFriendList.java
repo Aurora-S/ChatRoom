@@ -22,19 +22,19 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
 
     //处理第一张卡片
     JPanel jphy1,jphy2,jphy3;//jphy即jp好友
-    JButton jphy_jb1,jphy_jb2,jphy_jb3;
+    JButton jphy_jb1,jphy_jb2,jphy_jb3,jphy_jb4,jphy_jb5;
     JScrollPane jsp1;
     String owner;
 
     //处理第二张卡片（陌生人
-    JPanel jpmsr1,jpmsr2,jpmsr3;//jphy即jp好友
-    JButton jpmsr_jb1,jpmsr_jb2,jpmsr_jb3;
+    JPanel jpmsr1,jpmsr2,jpmsr3,jpmsr4;//jphy即jp好友
+    JButton jpmsr_jb1,jpmsr_jb2,jpmsr_jb3,jpmsr_jb4,jpmsr_jb5;
     JScrollPane jsp2;
     JLabel []jbls;
 
     //处理第三张卡片（黑名单
     JPanel jphmd1,jphmd2,jphmd3;//jphy即jp好友
-    JButton jphmd_jb1,jphmd_jb2,jphmd_jb3;
+    JButton jphmd_jb1,jphmd_jb2,jphmd_jb3,jphmd_jb4,jphmd_jb5;
     JScrollPane jsp3;
     JLabel []jbls2;
 
@@ -66,6 +66,17 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jphy_jb3=new JButton("SpringMVC");
         jphy_jb3.addActionListener(this);
 
+
+
+
+
+
+        jphy_jb4=new JButton("Search");
+        jphy_jb5=new JButton("Manage");
+
+
+
+
         jphy1=new JPanel(new BorderLayout());
         //假定有50好友（中间那个
         jphy2=new JPanel(new GridLayout(10,1,4,4));//44代表上下行间隔
@@ -88,10 +99,18 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         }
 
         //存放陌生人黑名单，2行一列
-        jphy3=new JPanel(new GridLayout(2,1));
+        jphy3=new JPanel(new GridLayout(4,1));
         //把两个按钮加入到jphy3
         jphy3.add(jphy_jb2);
         jphy3.add(jphy_jb3);
+
+
+
+        jphy3.add(jphy_jb4);
+        jphy3.add(jphy_jb5);
+
+
+
 
         jsp1=new JScrollPane(jphy2);
 
@@ -109,6 +128,14 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jpmsr_jb2=new JButton("VirtualIdol");
         jpmsr_jb3=new JButton("SpringMVC");
         jpmsr_jb3.addActionListener(this);
+
+
+
+
+        jpmsr_jb4=new JButton("Search");
+        jpmsr_jb5=new JButton("Manage");
+
+
 
         jpmsr1=new JPanel(new BorderLayout());
         //假定有20陌生人
@@ -141,12 +168,33 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jpmsr3.add(jpmsr_jb1);
         jpmsr3.add(jpmsr_jb2);
 
+
         jsp2=new JScrollPane(jpmsr2);
+
+
+
+
+
+        //存放陌生人黑名单，2行一列
+        jpmsr4=new JPanel(new GridLayout(3,1));
+        //把两个按钮加入到jphy3
+       // jpmsr3.add(jpmsr_jb2);
+        jpmsr4.add(jpmsr_jb3);
+
+
+
+        jpmsr4.add(jpmsr_jb4);
+        jpmsr4.add(jpmsr_jb5);
+
+
+
+
+
 
         //对jphy1初始化，jphy1是整个一大块，要放在jfream才能实现
         jpmsr1.add(jpmsr3,"North");
         jpmsr1.add(jsp2,"Center");
-        jpmsr1.add(jpmsr_jb3,"South");
+        jpmsr1.add(jpmsr4,"South");
 
 
 
@@ -159,6 +207,15 @@ public class QqFriendList extends JFrame implements ActionListener,MouseListener
         jphmd_jb2=new JButton("VirtualIdol");
         jphmd_jb2.addActionListener(this);
         jphmd_jb3=new JButton("SpringMVC");
+
+
+
+
+        jphmd_jb4=new JButton("Search");
+        jphmd_jb5=new JButton("Manage");
+
+
+
 
 
         jphmd1=new JPanel(new BorderLayout());
