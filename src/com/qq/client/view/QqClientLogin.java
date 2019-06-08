@@ -37,8 +37,8 @@ public class QqClientLogin extends JFrame implements ActionListener{
 
     JPanel jp2,jp3,jp4;//jp2放一个网格布局，里面有九个控件；jp34是另外两个，手机号码等
     //定义九个小控件
-    JLabel jp2_jbl1,jp2_jbl2,jp2_jbl3,jp2_jbl4;//label4个
-    JButton jp2_jb1;//button一个
+    JLabel jp2_jbl1,jp2_jbl2;//label2个
+    JButton jp2_jb1,jp2_jb9,jp2_jb10;//button3个
     JTextField jp2_jtf;//文本框一个
     JPasswordField jp2_jpf;//密码框一个
     JCheckBox jp2_jcb1,jp2_jcb2;//勾选框，共九个了
@@ -64,11 +64,11 @@ public class QqClientLogin extends JFrame implements ActionListener{
         //先处理lable
         jp2_jbl1 = new JLabel("用户ID",JLabel.CENTER);
         jp2_jbl2 = new JLabel("用户密码",JLabel.CENTER);
-        jp2_jbl3= new JLabel("忘记密码",JLabel.CENTER);
-        jp2_jbl3.setForeground(Color.blue);//前景色变蓝色，即字体颜色
-        jp2_jbl4 = new JLabel("申请密码保护",JLabel.CENTER);
+        jp2_jb9= new JButton("修改密码");
+        jp2_jb9.setForeground(Color.blue);//前景色变蓝色，即字体颜色
+        jp2_jb10 = new JButton("忘记密码");
 
-        jp2_jb1=new JButton(new ImageIcon("image/clear.gif"));
+        jp2_jb1=new JButton("绑定手机");
 
         jp2_jtf=new JTextField();
         jp2_jpf=new JPasswordField();
@@ -81,10 +81,10 @@ public class QqClientLogin extends JFrame implements ActionListener{
         jp2.add(jp2_jb1);
         jp2.add(jp2_jbl2);
         jp2.add(jp2_jpf);
-        jp2.add(jp2_jbl3);
+        jp2.add(jp2_jb9);
         jp2.add(jp2_jcb1);
         jp2.add(jp2_jcb2);
-        jp2.add(jp2_jbl4);
+        jp2.add(jp2_jb10);
         //创建选项卡窗口
         jtp=new JTabbedPane();//务必记得创建！要不就是空指针了
         jtp.add("用户ID",jp2);
