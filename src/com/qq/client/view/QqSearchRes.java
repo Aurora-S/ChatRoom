@@ -73,7 +73,7 @@ public class QqSearchRes extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==jb1){
             JOptionPane.showMessageDialog(this, "Application approved");
-            new NewList();
+            new NewList("2017001");
         }
     }
 
