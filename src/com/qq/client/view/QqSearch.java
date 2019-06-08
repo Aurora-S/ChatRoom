@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
  * @create 2019/6/8
  * @since 1.0.0
  */
-public class QqDelete extends JFrame implements ActionListener {
+public class QqSearch extends JFrame implements ActionListener {
 
 
         JTextField jtf;
@@ -35,7 +35,7 @@ public class QqDelete extends JFrame implements ActionListener {
             //QqChat qqChat=new QqChat("1");
         }
 
-        public QqDelete(){
+        public QqSearch(){
             this.setResizable(false);
             //this.setVisible(true);
 
@@ -59,6 +59,8 @@ public class QqDelete extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource()==jb1){
+            new QqSearchRes();
+        }
     }
 }
