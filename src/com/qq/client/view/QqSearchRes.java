@@ -41,7 +41,7 @@ public class QqSearchRes extends JFrame implements ActionListener{
 
 
         jbl1=new JLabel("---Search Result---",JLabel.CENTER);
-        jbl2=new JLabel("1. Spring MVC                   Creator：admin",JLabel.CENTER);
+        jbl2=new JLabel("1. SpringMVC                    Creator：admin",JLabel.CENTER);
 
 
 
