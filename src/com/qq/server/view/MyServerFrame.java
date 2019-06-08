@@ -39,7 +39,7 @@ public class MyServerFrame extends JFrame implements ActionListener{
         jb2=new JButton("关闭服务器");
         jb2.addActionListener(this);
 
-        jb3=new JButton("当前在线人数");
+        jb3=new JButton("在线用户列表");
         jb3.addActionListener(this);
 
         jp1.add(jb1);
@@ -60,7 +60,8 @@ public class MyServerFrame extends JFrame implements ActionListener{
             new MyQqServer();
             }
         if(e.getSource()==jb3) {
-            JOptionPane.showMessageDialog(this, "3");
+            //JOptionPane.showMessageDialog(this, "3");
+            new OnLineList();
             }
         if(e.getSource()==jb2) {
                      JOptionPane.showMessageDialog(this, "服务器已关闭");
