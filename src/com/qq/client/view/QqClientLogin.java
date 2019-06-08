@@ -105,12 +105,12 @@ public class QqClientLogin extends JFrame implements ActionListener{
         ////
         jp1_jb2.addActionListener(this);
 
-        jp1_jb3=new JButton(new ImageIcon("image/xiangdao.gif"));
+        //jp1_jb3=new JButton(new ImageIcon("image/xiangdao.gif"));
 
         //把三个按钮放入到jp1
         jp1.add(jp1_jb1);
         jp1.add(jp1_jb2);
-        jp1.add(jp1_jb3);
+        //jp1.add(jp1_jb3);
 
 
         this.add(jbl1,"North");
